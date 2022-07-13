@@ -11,15 +11,16 @@ int main()
 {  
     Time t;     // t является объектом типа Time.
 
-    std::cout << "Initial time value: ";
+    std::cout << "Начальное значение: ";
     t.printTime();      // Вызов функции-элемента класса через точку, как в питоне.
     t.setTime(16,10,33);
-    std::cout << "Current time value: ";
+    std::cout << "Текущее значение: ";
     t.printTime();
 
     t.setHour(17);
     t.setMinute(34);
     t.setSecond(25);
+    std::cout << "Значение после поэлементного присваивания: ";
     t.printTime();
 
     incrementMinutes(t, 5);
