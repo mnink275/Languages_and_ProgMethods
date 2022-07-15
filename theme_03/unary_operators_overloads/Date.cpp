@@ -57,6 +57,12 @@ Date& Date::operator+=(unsigned int additionalDays) {
     return *this;
 }
 
+Date& Date::operator-() {
+    year -= 4;
+    
+    return *this;
+}
+
 bool Date::leapYear(int testYear) {
     return (testYear % 400 == 0 || (testYear % 100 != 0 && testYear % 4 == 0));
 }

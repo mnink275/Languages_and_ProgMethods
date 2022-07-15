@@ -12,6 +12,7 @@ public:
     Date& operator++();
     Date operator++(int);
     Date& operator +=(unsigned int);
+    Date& operator-();
     static bool leapYear(int);
     bool endOfMonth(int) const;
 private:

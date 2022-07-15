@@ -20,5 +20,9 @@ main()
          << " d3 is " << d3 << endl;
     cout << "d3++ is " << d3++ << endl;
     cout << " d3 is " << d3 << endl;
+    cout << "\n\nTesting the prefix unary minus:\n"
+         << " d3 is " << d3 << endl;
+    cout << "-d3 is " << -d3 << endl;
+    cout << " d3 is " << d3 << endl;
     return 0;
 }
