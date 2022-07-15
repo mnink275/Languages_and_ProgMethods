@@ -44,6 +44,9 @@
         "xutility": "cpp",
         "string": "cpp",
         "complex": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "iomanip": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp"
     }
 }
