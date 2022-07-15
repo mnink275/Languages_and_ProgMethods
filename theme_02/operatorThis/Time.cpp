@@ -9,8 +9,8 @@ Time::Time(int hr, int min, int sec) { setTime(hr, min, sec); }
 // установка часа, минут и секунд.
 Time &Time::setTime(int h, int m, int s) {
     hour = (h >= 0 && h<24) ? h: 0;
-    this->minute = (m >= 0 && m < 60) ? m : 0;
-    (*this).second = (s >= 0 && s < 60) ? s : 0;
+    this->minute = (m >= 0 && m < 60) ? m : 0;  // Можно так.
+    (*this).second = (s >= 0 && s < 60) ? s : 0;    //А можно так.
     return *this; // возможность сцепления!
 }
 // Установка значения часа
