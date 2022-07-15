@@ -11,13 +11,15 @@ private:
 Time::Time(int h) {
     hour = h;
 }
+
 void Time::printTime() const {
     std::cout << hour;
 }
 
 int main()
 {  
-    Time t;
+    const Time t;
     t.printTime();
+    
     return 0;
 }
