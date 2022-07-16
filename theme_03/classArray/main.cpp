@@ -72,17 +72,17 @@ int main()
 
     cout << "\nComparing the sum of the elements of arrays:" << endl;
     cout << "vector1 is: \n" << vector3;
-    Array new_vector{5};
-    cout << "\nEnter new_vector (5 elements) for comparing with vector1: \n";
-    cin >> new_vector;
-    if (vector3 > new_vector) {
-        cout << "vector1 is larger than new_vector";
+    Array user_vector{5};
+    cout << "\nEnter user_vector (5 elements) for comparing with vector1: \n";
+    cin >> user_vector;
+    if (vector3 > user_vector) {
+        cout << "vector3 is larger than user_vector";
     }
-    else if (vector3 < new_vector) {
-        cout << "vector1 is smaller than new_vector";
+    else if (vector3 < user_vector) {
+        cout << "vector3 is smaller than user_vector";
     }
     else {
-        cout << "vector1 is equal to new_vector";
+        cout << "vector3 is equal to user_vector";
     }
     return 0;
 }

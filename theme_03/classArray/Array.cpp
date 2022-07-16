@@ -103,12 +103,6 @@ bool Array::operator<(const Array& comp) {
     return false;
 }
 
-
-
-
-
-
-
 bool Array::operator==(const Array& right) const {
     if (size != right.size) {
         return false;
