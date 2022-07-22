@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/Wondering.jpg</file>
+        <file>img/55a2f5a625b3a.jpg</file>
+        <file>img/Buhtelka.png</file>
+    </qresource>
+    <qresource prefix="/background">
+        <file>img/55a2f5a625b3a.jpg</file>
+        <file>img/cat.png</file>
+    </qresource>
+</RCC>
