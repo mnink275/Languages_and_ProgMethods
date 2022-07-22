@@ -8,10 +8,13 @@ Window::Window(QWidget* parent) : QWidget(parent)
     grid->addWidget(createSecondExclusiveGroup(), 1, 0);                
     grid->addWidget(createNonExclusiveGroup(), 0, 1);
     grid->addWidget(createPushButtonGroup(), 1, 1);
+    grid->addWidget(createLoginPasswordText(), 0, 2);
+    grid->addWidget(createPlainText(), 1, 2);
+    grid->addWidget(createListWidget(), 2, 0);
     setLayout(grid);
 
     setWindowTitle(tr("Group Boxes"));
-    resize(480, 320);
+    resize(680, 350);
 }
 
 QGroupBox* Window::createFirstExclusiveGroup()
@@ -105,4 +108,74 @@ QGroupBox* Window::createPushButtonGroup()
     groupBox->setLayout(vbox);
 
     return groupBox;
+}
+
+QLabel* Window::createLoginPasswordText()
+{
+    QLabel* plblDisplay = new QLabel;
+
+    plblDisplay->setFrameStyle(QFrame::Box | QFrame::Raised);
+    plblDisplay->setLineWidth(2);
+
+    QLabel* plblText = new QLabel("&Text:");
+    QLineEdit* ptxt = new QLineEdit();
+    plblText->setBuddy(ptxt);
+    QObject::connect(ptxt, SIGNAL(textChanged(const QString&)),
+        plblText, SLOT(setText(const QString&)));
+
+    QLabel* plblPassword = new QLabel("&Password:");
+    QLineEdit* ptxtPassword = new QLineEdit;
+    plblPassword->setBuddy(ptxtPassword);
+    ptxtPassword->setEchoMode(QLineEdit::Password);
+
+    QVBoxLayout* pvbxLayout = new QVBoxLayout;
+    pvbxLayout->addWidget(plblText);
+    pvbxLayout->addWidget(ptxt);
+    pvbxLayout->addWidget(plblPassword);
+    pvbxLayout->addWidget(ptxtPassword);
+    plblDisplay->setLayout(pvbxLayout);
+    
+    return plblDisplay;
+}
+
+QTextEdit* Window::createPlainText()
+{
+    QTextEdit* ptxtEdit = new QTextEdit;
+    ptxtEdit->setFrameShape(QFrame::Panel);
+    ptxtEdit->setLineWidth(2);
+    ptxtEdit->setHtml(
+        "<HÒÌL>"
+        "<BODY BGCOLOR=#EBBC44>"
+        "<CENTER><IMG SRC=\":/toTxt/img/Buhtelka.png\"></CENTER>"
+        "<H2><CENÒER>Gnome Poem</CENÒER></H2>"
+        "<FONÒ COLOR=BLACK>"
+        "<Ð ALIGN=\"center\">"
+            "<I>"
+            "Magic! Magic'<BR>"
+            "Magic! Magic!<BR>"
+            "Magic! Magic!<BR>"
+            "..."
+            "</I>"
+        "</Ð>"
+        "</FONÒ>"
+        "</BODY>"
+        "</HTML>"
+    );
+    ptxtEdit->resize(320, 350);
+
+    return ptxtEdit;
+}
+
+QListWidget* Window::createListWidget()
+{
+    QStringList lst;
+    QListWidget* plwgt = new QListWidget;
+    QListWidgetItem* pitem = 0;
+
+    lst << "Linux" << "Window" << "MacOSX" << "Android";
+    foreach(QString str, lst) {
+        pitem = new QListWidgetItem(str, plwgt);
+    }
+
+    return plwgt;
 }
